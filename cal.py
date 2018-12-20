@@ -1,9 +1,13 @@
-import numpy as np
-a=np.array([[2,1,3],[1,1,1],[0,1,2]])
-b=np.array([[0,1,2],[1,2,3],[1,1,1]])
-sum=a+b
-sub=a-b
-mul=a*b
-print sum
-print sub
-print mul
+from flask import Flask,render_template
+app = Flask(__name__)
+@app.route('/')
+def index():
+    n1=55
+    n2=22
+    total=n1+n2
+    diff=n1-n2
+    mul=n1*n2
+    div=float(n1/n2)
+    return render.template('mathcal.html',**locals())
+if __name__ =='__main__':
+    app.run()
